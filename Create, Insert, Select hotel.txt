@@ -1,0 +1,60 @@
+create table kamar (
+	id_kamar varchar(7),
+	tipe_kamar varchar(15),
+	tarif varchar(20),
+	status_ruangan tinyint(1),
+	kode_receptionist varchar(7),
+	primary key(id_kamar),
+	foreign key(kode_receptionist) references receptionist(kode_receptionist)
+);
+
+create table customer (
+	nama varchar(30),
+	email varchar(30),
+	nomor_telepon varchar(12),
+	primary key(id_akun)
+);
+
+create table pembayaran (
+	id_pembayaran varchar(7),
+	tanggal_pembayaran date,
+	total_pajak varchar(20),
+	total_tarif varchar(20),
+	primary key(id_pembayaran),
+	foreign key (id_akun) references customer(id_akun),
+	foreign key (kode_receptionist) references receptionist(kode_receptionist),
+
+);
+
+create table receptionist(
+	kode_receptionist varchar(7)
+);
+
+insert into receptionist (kode_receptionist) values
+('KZR'), ('MAA'), ('MRP');
+
+insert into kamar (id_kamar, tipe_kamar, tarif, status_ruangan, kode_receptionist)
+values ('S10', 'standard', 250000, 0, 'KZR'), ('S11', 'standard', 250000, 0, 'MRP');
+
+insert into customer(id_akun, nama, email, nomor_telepon)
+values (121, 'Aaron rodgers', 'aarod@gmail.com', 081266547121), (131, 'Azhar Abiman', 'azharabiman@gmail.com', 081277830101);
+
+insert into pembayaran(id_pembayaran, tanggal_pembayaran, total_pajak, total_tarif, id_akun, kode_receptionist)
+values ('f431',24-01-2018,40000, 549800, 121, 'KZR'), ('f441',25-01-2018,40000, 549800, 131, 'MRP');
+
+
+select * from customer
+
+select * from kamar
+
+select * from pembayaran 
+
+select * from receptionist
+
+select * from kamar where kode_receptionist="MRP"
+
+select * from pembayaran where tanggal_pembayaran="24-01-2018"
+
+
+
+
