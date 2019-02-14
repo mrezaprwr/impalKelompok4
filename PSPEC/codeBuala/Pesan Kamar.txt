@@ -1,0 +1,48 @@
+int pesanKamar(){
+	int menu;
+
+	struct dataOrder { 
+	char nama[20];
+	char jenisKelamin[2];
+	int umur;
+	char tipeKamar[10];
+	int kamar;
+	int sewa;
+	} Pesan;
+
+	printf("================================================\n");
+	printf(" Reservasi Kamar \n");
+	printf("================================================\n");
+	printf("Masukkan Nama Pemesan : ");
+ 	scanf_s("%s", Pesan.nama, 20);
+ 	printf("Masukkan Jenis Kelamin L/P : ");
+ 	scanf_s("%s", Pesan.jenisKelamin, 2);
+ 	printf("Masukkan Umur Pemesan : ");
+ 	scanf_s("%d", &Pesan.umur);
+
+ 	printf("Pilih Tipe Kamar\n");
+ 	printf("1. Deluxe\n");
+	printf("2. Standard\n");
+ 	printf("3. VVIP\n");
+ 	printf("Masukkan tipe kamar (Masukkan tanpa spasi): ");
+ 	scanf_s("%s", Pesan.tipeKamar, 10);
+ 	printf("Masukkan jumlah kamar yang ingin dipesan : ");
+ 	scanf_s("%d", &Pesan.kamar);
+ 	printf("Masukkan lama sewa kamar : (hari) ");
+ 	scanf_s("%d", &Pesan.sewa);
+
+ 	printf("\n\n================================================\n");
+ 	printf(" Reservasi Kamar \n");
+ 	printf("================================================\n");
+ 	printf("Data yang anda inputkan : \n");
+ 	printf("Nama Pemesan : %s\n", Pesan.nama);
+ 	printf("Jenis Kelamin : %s\n", Pesan.jenisKelamin);
+ 	printf("Umur : %d\n", Pesan.umur);
+ 	printf("Tipe Kamar : %s\n", Pesan.tipeKamar);
+ 	printf("Jumlah Kamar yang dipesan : %d\n", Pesan.kamar);
+ 	printf("Lama Sewa (hari) : %d\n", Pesan.sewa);
+
+ 	menuPesan();
+
+ 	return 0;
+}
