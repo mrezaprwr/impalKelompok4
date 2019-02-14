@@ -1,0 +1,20 @@
+void kelolaPesanan(char *dataOrder, char*dataBayar int confirm, boolean paid) {
+	/*confirm batal = 0
+	  confirm pembayaran=1;
+	*/
+	dataOrder = &pesanKamar();
+	dataBayar = &bayarPesanan();
+	paid=false;
+	if(dataBayar!=NULL) {
+		paid=true;
+	}
+	if(paid==false && confirm==0) {
+		printf("Pesanan %s dibatalkan", dataOrder);
+	}
+	else if(paid==true && confirm==1) {
+		printf("Pesanan %s diterima", dataOrder);
+	}
+	else {
+		pass;
+	}
+
