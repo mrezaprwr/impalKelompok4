@@ -1,0 +1,41 @@
+void swap(float &a, float b) {
+	int x;
+	x=a;
+	a=b;
+	b=x;
+}
+
+void sortSides(float &a, float &b, float &c) {
+	if(a>b) {
+		swap(a,c);
+	}
+	else if(a>b) {
+		swap(a,b);
+	}
+	else if(b>c) {
+		swap(b,c);
+	}
+}
+
+int main(){
+	printf("Masukkan tiga sisi");
+	scanf("%f %f %f",&a, &b, &c);
+
+	sortSides(a,b,c);
+	if(a<=0 || b<=0 || c<=0 || c>a+b) {
+		printf("Sisi sisi segitiga tidak valid");
+	}
+	else if(fabs(a-b)<=0.01 && fabs(b-c) <=0.01){
+		printf("segitiga sama sisi");
+	}
+	else if(fabs(a-b)<=0.01&&fabs(a-c)>0.01 || fabs(a-c)<=0.01&&fabs(a-b)>0.01 || fabs(b-c)<=0.01&&fabs(a-c)>0.01) {
+		printf("segitiga sama kaki");
+	}
+	else if(c<a+b) {
+		printf("segitiga sembarang");
+	}
+	else {
+		("Segitiga tidak dikenal");
+	}
+	return 0;
+}
